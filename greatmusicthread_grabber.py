@@ -14,7 +14,7 @@ link_list = []
 for url in page_urls:
     link_list.extend(grab_youtube_links(url))
     
-print(len(link_list))
+print(len(set(link_list)))
 
 with open('yt_links_from_b12.json', 'w') as file:
-    json.dump(link_list, file)
+    json.dump(set(link_list), file)
